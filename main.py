@@ -109,6 +109,7 @@ for elem in el:
          channeltitle = main_data3.get_video_channeltitle()
          title = main_data2.get_video_title()
          date = main_data.get_video_date()
+         print(date)
         
          #概要欄
          # youtube = build('youtube', 'v3', developerKey='AIzaSyBEYAMb1sGi_clxC7M0jJpSrx7nDrNxSz8')
@@ -126,13 +127,13 @@ for elem in el:
          #
 
          #ジャンル
-         if title in 'cover':
+         if 'cover' in title:
             tag="歌ってみた"
-         elif title in 'Cover':
+         elif 'Cover' in title:
             tag="歌ってみた"
-         elif title in '歌ってみた':
+         elif '歌ってみた' in title:
             tag="歌ってみた"
-         elif title in 'オリジナル':
+         elif 'オリジナル' in title:
             tag="オリジナルソング"
          else:
             tag="配信アーカイブ"
@@ -159,7 +160,7 @@ for elem in el:
          row.title_tag=title_tag
          row.Tags=tag
          row.Column=youtube_list
-         row.Date=datetime.date(int(date_full[:4]),int(date_full[5:6]),int(date_full[7:8]))
+         row.Date=datetime.date(int(date_full[:4]),int(date_full[4:6]),int(date_full[6:8]))
          row.IMG=youtube_list_IMG
 
       youtube_list_math=True
